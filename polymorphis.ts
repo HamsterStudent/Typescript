@@ -19,4 +19,4 @@ class LocalStorage<T> {
   }
 }
 
-const stringStorage = new LocalStorage<string>();
+const stringStorage = new LocalStorage<boolean>();

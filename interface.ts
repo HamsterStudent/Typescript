@@ -82,3 +82,42 @@ class PlayerF implements UserC, Human {
     return `Hello ${name}`;
   }
 }
+
+const a = new PlayerF("hamster", "cute", 123);
+
+interface AUser {
+  firstName: string;
+  lastName: string;
+  fullName(): string;
+  sayHi(name: string): string;
+}
+
+const makeUser = (user: AUser) => {
+  return "HI";
+};
+
+makeUser({
+  firstName: "hamster",
+  lastName: "hi",
+  fullName: () => "hamster",
+  sayHi: (name) => "asdfa",
+});
+
+function Hamster(user: AUser): AUser {
+  const x = {
+    firstName: user.firstName,
+    lastName: user.lastName,
+    fullName: user.fullName,
+    sayHi: user.sayHi,
+  };
+  return x;
+}
+
+const c = {
+  firstName: "hamster",
+  lastName: "hi",
+  fullName: () => "hamster",
+  sayHi: (name) => "asdfa",
+};
+
+Hamster(c);
